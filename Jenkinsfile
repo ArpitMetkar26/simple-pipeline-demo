@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 echo "Cloning repository for ${APP_NAME}"
-                git 'https://github.com/your-username/simple-pipeline-demo.git'
+                git 'https://github.com/ArpitMetkar26/simple-pipeline-demo.git'
             }
         }
 
