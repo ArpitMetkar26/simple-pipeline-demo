@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building ${APP_NAME}"
-                echo "Build successful" > build.txt
+               sh 'echo "Build successful" > build.txt'
             }
         }
 
