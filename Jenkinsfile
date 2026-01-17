@@ -9,28 +9,28 @@ pipeline {
 
         stage('Clone') {
             steps {
-                echo "Cloning repository for ${APP_NAME}"
-                git 'https://github.com/ArpitMetkar26/simple-pipeline-demo.git'
+                echo "Source code already checked out by Declarative SCM"
+                sh 'ls -la'
             }
         }
 
         stage('Build') {
             steps {
-                echo "Building application..."
+                echo "Building ${APP_NAME}"
                 echo "Build successful" > build.txt
             }
         }
 
         stage('Test') {
             steps {
-                echo "Running tests..."
+                echo "Running tests"
                 echo "All tests passed"
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying ${APP_NAME}..."
+                echo "Deploying ${APP_NAME}"
             }
         }
     }
@@ -38,7 +38,7 @@ pipeline {
     post {
         success {
             archiveArtifacts artifacts: 'build.txt'
-            echo "Pipeline completed successfully"
+            echo "Pipeline executed successfully"
         }
     }
 }
